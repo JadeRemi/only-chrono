@@ -1,0 +1,105 @@
+/* swiper */
+.swiper,
+.swiper-container {
+  position: relative;
+  left: 80px;
+  top: 840px;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  display: block;
+  width: 1435px;
+  margin: 0 auto;
+}
+
+.swiper-android .swiper-slide,
+.swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+
+.swiper-wrapper {
+  width: 800px;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: content-box;
+}
+
+.swiper-backface-hidden .swiper-slide {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.swiper-slide .swiper-slide-next {
+  flex-shrink: 0;
+  width: 380px;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+
+element.style {
+  width: 0px;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: var(--swiper-navigation-sides-offset, 0px);
+  right: auto;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: var(--swiper-navigation-sides-offset, 0px);
+  left: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 25%;
+  z-index: 4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev {
+  width: 15px;
+  height: 15px;
+  padding: 11.5px;
+  content: url(../img/arrow_left.png);
+  cursor: pointer;
+  border: 1px solid rgba(66, 86, 122, 0.5);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+  margin-left: 10px;
+  z-index: 6;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev:after {
+  width: 15px;
+  height: 15px;
+  padding: 11.5px;
+  content: url(../img/arrow_right.png);
+  cursor: pointer;
+  border: 1px solid rgba(66, 86, 122, 0.5);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+  margin-right: 10px;
+}
