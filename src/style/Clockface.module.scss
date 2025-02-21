@@ -112,8 +112,8 @@ $angle: 360deg / $planet-count;
 
 .clockface {
    position: absolute;
-   left: calc(50% + 80px);
-   top: calc(50% - 60px);
+   left: calc(50% + 78px);
+   top: calc(50% - 62px);
    
    @for $i from 1 through $planet-count {
       &.rotate-#{$i} {
