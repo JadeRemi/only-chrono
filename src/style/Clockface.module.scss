@@ -20,11 +20,20 @@ $angle: 360deg / $planet-count;
    width: $planet-size;
    height: $planet-size;
 
+   --rotate: 0;
+ 
+
    @for $i from 1 through $planet-count {
       &:nth-child(#{$i}) {
-        transform: rotate($angle * ($i - 1)) translate($circle-size / 2) rotate(-$angle * ($i - 1)) translate( (- $planet-size / 2),  (- $planet-size / 2));
+         transition: all .3s;
+         transform:
+            rotate(calc(#{$angle} * (#{$i} - 1 - var(--rotate))))
+            translate($circle-size / 2)
+            rotate(calc(#{- $angle} * (#{$i} - 1 - var(--rotate))))
+            translate( (- $planet-size / 2), (- $planet-size / 2))
       }
-    }
+   }
+
    & button {
       position: absolute;
       cursor: pointer;
@@ -45,6 +54,10 @@ $angle: 360deg / $planet-count;
          width: 0;
          height: 0;
       }
+   }
+
+   & .clocktitle {
+      display: none;
    }
 }
 
@@ -79,14 +92,34 @@ $angle: 360deg / $planet-count;
       }
    }
 
-
-
  }
+
+.clockmark.selected .clocktitle {
+   display: block;
+}
+
+.clocktitle {
+   position: absolute;
+   left: 20px + 56px;
+   font-family: "PT Sans";
+   font-style: normal;
+   font-weight: 700;
+   font-size: 20px;
+   color: #42567A;
+   margin: 0;
+   top: 16px;
+}
 
 .clockface {
    position: absolute;
    left: calc(50% + 80px);
    top: calc(50% - 60px);
    
+   @for $i from 1 through $planet-count {
+      &.rotate-#{$i} {
+        transform: rotate(-($angle * ($i - 1)));
+      }
+   }
 
 }
+

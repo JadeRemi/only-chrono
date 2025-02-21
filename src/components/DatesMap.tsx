@@ -42,18 +42,7 @@ export const DatesMap = () => {
                counter={counter}
                selectCounter={selectCounter}
                len={number}
-               key={obj.counter}
-               start={obj.start}
-               finish={obj.finish}
-               coun={obj.counter}
-               year0={obj.year0}
-               descr={obj.description}
-               year1={obj.year1}
-               descr1={obj.description1}
-               year2={obj.year2}
-               descr2={obj.description2}
-               year3={obj.year3}
-               descr3={obj.description3}
+               obj={obj}
             />
          ))}
       </>
