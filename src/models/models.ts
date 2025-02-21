@@ -5,23 +5,21 @@ export interface IData {
    obj: ToText;
 }
 
+export interface ToTextItem {
+   year: number;
+   description: number;
+}
+
 export interface Obj {
    id: number;
    length: number;
 }
 
 export interface ToText {
-   counter: string;
+   id: number;
    start: number;
    finish: number;
-   year0: string;
-   description0: string;
-   year1: string;
-   description1: string;
-   year2: string;
-   description2: string;
-   year3: string;
-   description3: string;
    length: number;
    type: string;
+   items: ToTextItem[];
 }

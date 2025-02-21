@@ -27,15 +27,8 @@ const Text = (props: IData) => {
    } = props;
 
    const {
-      year0,
-      description0,
-      year1,
-      description1,
-      year2,
-      description2,
-      year3,
-      description3,
-      counter: total,
+      items,
+      id,
       start,
       finish,
       type,
@@ -59,7 +52,7 @@ const Text = (props: IData) => {
             </div>
          </div>
          <div className={counter}>
-            {total}/0{len}
+            0{id}/0{len}
          </div>
          <div>
             <div className={block_left}></div>
@@ -77,30 +70,14 @@ const Text = (props: IData) => {
             modules={[FreeMode, Pagination, Navigation]}
             className={SwiperStyle}
          >
-            <SwiperSlide>
-               <div className={trans}>
-                  <div className={year}>{year0}</div>
-                  <div className={description}>{description0}</div>
-               </div>
-            </SwiperSlide>
-            <SwiperSlide>
-               <div className={trans}>
-                  <div className={year}>{year1}</div>
-                  <div className={description}>{description1}</div>
-               </div>
-            </SwiperSlide>
-            <SwiperSlide>
-               <div className={trans}>
-                  <div className={year}>{year2}</div>
-                  <div className={description}>{description2}</div>
-               </div>
-            </SwiperSlide>
-            <SwiperSlide>
-               <div className={trans}>
-                  <div className={year}>{year3}</div>
-                  <div className={description}>{description3}</div>
-               </div>
-            </SwiperSlide>
+            {items.map(item => (
+               <SwiperSlide>
+                  <div className={trans}>
+                     <div className={year}>{item.year}</div>
+                     <div className={description}>{item.description}</div>
+                  </div>
+               </SwiperSlide>
+            ))}
          </Swiper>
       </>
    );
