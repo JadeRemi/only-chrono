@@ -1,9 +1,11 @@
+$period-size: 973px;
+
 .name {
    position: absolute;
    width: 353px;
    height: 134px;
-   left: 400px;
-   top: 170px;
+   left: calc(10% + 78px);
+   top: calc(50% - (176px + 140px));
    font-family: 'PT Sans';
    font-style: normal;
    font-weight: 700;
@@ -14,10 +16,10 @@
 
 .period {
    position: absolute;
-   width: 973px;
+   width: $period-size;
    height: 160px;
-   left: 537px;
-   top: 400px;
+   left: calc(50% - $period-size / 2);
+   top: calc(50% - 80px);
    font-family: 'PT Sans';
    font-style: normal;
    font-weight: 700;
@@ -41,7 +43,7 @@
    position: absolute;
    width: 36px;
    height: 18px;
-   left: 400px;
+   left: calc(10% + 78px);
    top: 697px;
    font-family: 'PT Sans';
    font-style: normal;

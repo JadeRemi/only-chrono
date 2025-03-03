@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import style from '../style/Clockface.module.scss';
 
 interface IClockface {
@@ -21,11 +20,15 @@ export const Clockface = ({counter, selectCounter, len, title}:IClockface) => {
    const rotateStyle = { '--rotate': `${counter}` } as React.CSSProperties;
 
     return (
-    <div className={classNames(clockface, `rotate-${counter}`)}>
+    <div className={clockface}>
         {items.map((item) => {
             const isSelected = counter === item;
             return (
-            <div className={`${clockmark} ${isSelected ? selected : ""}`} key={item} style={rotateStyle}>
+            <div
+                className={`${clockmark} ${isSelected ? selected : ""}`}
+                key={item}
+                style={rotateStyle}
+            >
                 <button onClick={() => selectCounter(item)}>
                     <p>
                         {item}

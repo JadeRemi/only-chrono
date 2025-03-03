@@ -15,8 +15,6 @@ const Text = (props: IData) => {
       counter,
       year,
       description,
-      block_left,
-      block_right,
       trans,
    } = style;
    const {
@@ -54,10 +52,14 @@ const Text = (props: IData) => {
          <div className={counter}>
             0{id}/0{len}
          </div>
+         {
+         /*
          <div>
             <div className={block_left}></div>
             <div className={block_right}></div>
          </div>
+         */
+         }
 
          <Swiper
             slidesPerView={3}
@@ -71,7 +73,7 @@ const Text = (props: IData) => {
             className={SwiperStyle}
          >
             {items.map(item => (
-               <SwiperSlide>
+               <SwiperSlide key={item.year}>
                   <div className={trans}>
                      <div className={year}>{item.year}</div>
                      <div className={description}>{item.description}</div>

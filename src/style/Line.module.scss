@@ -1,8 +1,10 @@
+$sun-diameter: 530px;
+
 .vertical {
    position: absolute;
    width: 0px;
-   height: 1080px;
-   left: 1040px;
+   height: 100%;
+   left: 50%;
    top: 0px;
    opacity: 0.1;
    border: 1px solid #42567a;
@@ -10,10 +12,10 @@
 
 .horizontal {
    position: absolute;
-   width: 1440px;
+   width: calc(100vw - 10% - 10% - 3px);
    height: 0px;
-   left: 320px;
-   top: 480px;
+   left: 10%;
+   top: 50%;
    opacity: 0.1;
    border: 1px solid #42567a;
 }
@@ -21,10 +23,10 @@
 .circle {
    box-sizing: border-box;
    position: absolute;
-   width: 530px;
-   height: 530px;
-   left: 775px;
-   top: 215px;
+   width: $sun-diameter;
+   height: $sun-diameter;
+   left: calc(50% - ($sun-diameter / 2));
+   top: calc(50% - ($sun-diameter / 2));
    opacity: 0.2;
    border: 1px solid #42567a;
    border-radius: 50%;
@@ -34,8 +36,8 @@
    position: absolute;
    width: 5px;
    height: 120px;
-   left: 322px;
-   top: 177px;
+   left: 10%;
+   top: calc(50% - (176px + 134px));
    background: linear-gradient(0deg, #ef5da8, #3877ee);
 }
 
@@ -52,7 +54,7 @@
    width: 25px;
    height: 25px;
    padding: 11.5px;
-   left: 470px;
+   left: calc(10% + 78px + 70px);
    top: 735px;
    content: url(../img/arrow_right-transformed.png);
    cursor: pointer;
@@ -63,8 +65,8 @@
 .line_right {
    position: absolute;
    width: 0px;
-   height: 1080px;
-   left: 1760px;
+   height: 100vh;
+   right: 10%;
    top: 0px;
    opacity: 0.1;
    border: 1px solid #42567a;
@@ -73,8 +75,8 @@
 .line_left {
    position: absolute;
    width: 0px;
-   height: 1080px;
-   left: 320px;
+   height: 100vh;
+   left: 10%;
    top: 0px;
    opacity: 0.1;
    border: 1px solid #42567a;
@@ -85,7 +87,7 @@
    width: 25px;
    height: 25px;
    padding: 11.5px;
-   left: 400px;
+   left: calc(10% + 78px);
    top: 735px;
    content: url(../img/arrow_left-transformed.png);
    cursor: pointer;

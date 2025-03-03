@@ -31,11 +31,11 @@ export const DatesMap = () => {
          <div
             className={button_right}
             onClick={() => setCounter(counter + 1)}
-         ></div>
+         />
          <div
             className={button_left}
             onClick={() => setCounter(counter - 1)}
-         ></div>
+         />
 
          {findObj.map((obj: ToText): object => (
             <Text
